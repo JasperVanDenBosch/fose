@@ -54,7 +54,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>python deployment/cleanup.py fose</command>
+      <command>python deployment/cleanup.py fose-*.tar.gz</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>virtualenv env --no-site-packages</command>
@@ -65,7 +65,15 @@
     <hudson.tasks.Shell>
       <command>env/bin/pip install --use-mirrors fose-*</command>
     </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command>env/bin/fose --test</command>
+    </hudson.tasks.Shell>
   </builders>
-  <publishers/>
+  <publishers>
+    <hudson.tasks.ArtifactArchiver>
+      <artifacts>fose-*.tar.gz</artifacts>
+      <latestOnly>false</latestOnly>
+    </hudson.tasks.ArtifactArchiver>
+  </publishers>
   <buildWrappers/>
 </project>
