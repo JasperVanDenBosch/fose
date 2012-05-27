@@ -13,8 +13,9 @@ class FoseTests(unittest.TestCase):
 
     def test_version(self):
         import fose
-        from version import get_git_version
-        self.assertEqual(fose.version,get_git_version())
+        import pkg_resources
+        pkgversion = pkg_resources.get_distribution("fose").version
+        self.assertEqual(fose.version,pkgversion)
 
 def run():
     unittest.main()
