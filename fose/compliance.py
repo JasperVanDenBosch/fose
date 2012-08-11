@@ -1,4 +1,5 @@
 import unittest, sys
+from fose.protocol import UriBuilder
 
 
 def runtest(testclass):
@@ -10,8 +11,16 @@ def runtest(testclass):
 
 class ComplianceTests(unittest.TestCase):
 
-    def test_sth(self):
-        self.fail('Running compliance tests on url: {0} '.format(self.rootUrl))
+    def setUp(self):
+        self.uri = UriBuilder(self.rootUrl)
+
+    def test_Get_reviews_for_id(self):
+		#use protocol url to GET response 
+        url = self.uri.forDoi('fosetest.1')
+		#test schema validation
+		#use core lib to read this as a model object
+		#test for properties
+        self.fail('Running compliance tests on url: {0} '.format(url))
 
 def run(targetUrl):
     ComplianceTests.rootUrl = targetUrl

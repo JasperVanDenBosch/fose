@@ -17,5 +17,11 @@ class FoseTests(unittest.TestCase):
         pkgversion = pkg_resources.get_distribution("fose").version
         self.assertEqual(fose.version,pkgversion)
 
+    def test_uribuilder_single_publication_by_doi(self):
+        from fose.protocol import UriBuilder
+        expected = 'http://base.domain/doi/abc.1234'
+        uriBuilder = UriBuilder('http://base.domain')
+        self.assertEqual(expected, uriBuilder.forDoi('abc.1234'))
+
 if __name__ == '__main__':
     unittest.main()
