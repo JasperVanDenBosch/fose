@@ -1,5 +1,5 @@
-fose
-====
+Readme for the FOSE package
+===========================
 
 Framework for Open Science Evaluation
 
