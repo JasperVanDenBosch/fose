@@ -17,5 +17,10 @@ To test a fose implementation at 'www.mydomain.com' for compliance:
 
     fose --compliance http://www.mydomain.org
 
+XML Schemas
+-----------
+
+* thread.xsd
+
 
 

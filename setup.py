@@ -7,6 +7,7 @@ setup(name='fose',
       packages=find_packages(),
         test_suite='tests',
       entry_points={
-          'console_scripts': ['fose = fose:main',]}
+          'console_scripts': ['fose = fose:main',]},
+      tests_require='lxml',
       )
 

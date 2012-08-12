@@ -15,6 +15,15 @@ All FOSE content targeting a single publication with a given doi[*](#doi) :
 
 http://fose.org/doi/fosetest.1
 
+XML
+---
+
+FOSE content should be transmitted as XML documents. The vocabulary of elements in such documents is contained in the XML namespace "http://fose1.org/fose". 
+
+##### thread
+
+
+
 
 Notes
 -----
