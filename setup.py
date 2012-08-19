@@ -8,7 +8,7 @@ setup(name='fose',
         test_suite='tests',
         entry_points={
           'console_scripts': ['fose = fose:main',]},
-        tests_require='lxml',
+        tests_require=['lxml','requests'],
         package_data={'fose': ['*.xsd']},
       )
 
