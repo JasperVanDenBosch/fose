@@ -1,4 +1,4 @@
 prune env
 include RELEASE-VERSION
 include version.py
-recursive-include *.xsd
+recursive-include fose *.xsd
