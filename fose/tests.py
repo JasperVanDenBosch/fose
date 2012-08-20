@@ -1,4 +1,5 @@
-import unittest, sys
+import unittest, sys, os
+import pkg_resources
 
 def runtest(testclass):
     suite = unittest.TestLoader().loadTestsFromTestCase(testclass)
@@ -13,9 +14,13 @@ class FoseTests(unittest.TestCase):
 
     def test_version(self):
         import fose
-        import pkg_resources
         pkgversion = pkg_resources.get_distribution("fose").version
         self.assertEqual(fose.version,pkgversion)
+
+    def test_has_schemas(self):
+        import fose
+        schemaFilename = pkg_resources.resource_filename('fose','thread.xsd')
+        self.assertTrue(os.path.isfile(schemaFilename))
 
     def test_uribuilder_single_publication_by_doi(self):
         from fose.protocol import UriBuilder
