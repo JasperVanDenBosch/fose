@@ -6,7 +6,7 @@ import requests
 
 ### Test Data Section
 
-TESTDOI = 'fosetest.1'
+TESTDOI = '99.789/fosetest.1'
 
 
 def runtest(testclass):

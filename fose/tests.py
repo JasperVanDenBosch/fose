@@ -24,9 +24,9 @@ class FoseTests(unittest.TestCase):
 
     def test_uribuilder_single_publication_by_doi(self):
         from fose.protocol import UriBuilder
-        expected = 'http://base.domain/doi/abc.1234'
+        expected = 'http://base.domain/doi/99.987/abc.1234'
         uriBuilder = UriBuilder('http://base.domain')
-        self.assertEqual(expected, uriBuilder.forDoi('abc.1234'))
+        self.assertEqual(expected, uriBuilder.forDoi('99.987/abc.1234'))
 
 if __name__ == '__main__':
     unittest.main()
