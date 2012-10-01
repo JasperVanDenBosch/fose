@@ -25,7 +25,7 @@ class ComplianceTests(unittest.TestCase):
 		#use protocol url to GET response 
         url = self.uri.forDoi(TESTDOI)
         #actually get file
-        response = requests.get(url, headers={'Accept':'application/xml'})
+        response = requests.get(url, headers={'Accept':'text/xml'})
         response.raise_for_status()
 		#test schema validation
         schemaFilename = pkg_resources.resource_filename('fose','thread.xsd')
