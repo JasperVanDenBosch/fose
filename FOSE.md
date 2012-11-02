@@ -15,6 +15,10 @@ All FOSE content targeting a single publication with a given doi[*](#doi) :
 
 http://fose.org/doi/fosetest.1
 
+All FOSE content authored by the user with a unique user id :
+
+http://fose.org/users/a1B2c3D4
+
 XML
 ---
 
@@ -22,7 +26,7 @@ FOSE content should be transmitted as XML documents. The vocabulary of elements 
 
 ##### thread
 
-
+##### user
 
 
 Notes

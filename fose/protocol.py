@@ -8,3 +8,7 @@ class UriBuilder(object):
     def forDoi(self, doi):
         doiBase = urlparse.urljoin(self.root, 'doi/')
         return urlparse.urljoin(doiBase, doi)
+
+    def forUser(self, uid):
+        userBase = urlparse.urljoin(self.root, 'users/')
+        return urlparse.urljoin(userBase, uid)

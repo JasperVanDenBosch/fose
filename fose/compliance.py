@@ -7,6 +7,8 @@ import requests
 ### Test Data Section
 
 TESTDOI = '99.789/fosetest.1'
+UID = 'a1B2c3D4'
+REVIEWCONTENT = 'FOSE Compliance Test Review'
 
 
 def runtest(testclass):
@@ -34,7 +36,24 @@ class ComplianceTests(unittest.TestCase):
         #THREAD = '<?xml version="1.0"?><thread xmlns="http://fose1.org/fose"/>'
         root = etree.fromstring(response.text, parser)
 		#use core lib to read this as a model object
-		#test for properties
+		#for each review in thread, test if it is a review by user 'a1B2c3D4'
+        # with content 'FOSE Compliance Test Review' 
+
+    def test_Get_user_profile_for_uid(self):
+		#use protocol url to GET response 
+        url = self.uri.forUser(UID)
+        #actually get file
+        response = requests.get(url, headers={'Accept':'text/xml'})
+        response.raise_for_status()
+		#test schema validation
+        schemaFilename = pkg_resources.resource_filename('fose','user.xsd')
+        schema = etree.XMLSchema(file=schemaFilename)
+        parser = etree.XMLParser(schema = schema)
+        #THREAD = '<?xml version="1.0"?><thread xmlns="http://fose1.org/fose"/>'
+        root = etree.fromstring(response.text, parser)
+		#use core lib to read this as a model object
+		#for each review by user, test if it is a review 
+        # for doi '99.789/fosetest.1' with content 'FOSE Compliance Test Review' 
 
 def run(targetUrl):
     ComplianceTests.rootUrl = targetUrl
