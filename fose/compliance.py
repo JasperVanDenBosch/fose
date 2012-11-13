@@ -7,7 +7,7 @@ import requests
 ### Test Data Section
 
 TESTDOI = '99.789/fosetest.1'
-UID = 'a1B2c3D4'
+TESTUID = 'a1B2c3D4'
 REVIEWCONTENT = 'FOSE Compliance Test Review'
 
 
@@ -41,7 +41,7 @@ class ComplianceTests(unittest.TestCase):
 
     def test_Get_user_profile_for_uid(self):
 		#use protocol url to GET response 
-        url = self.uri.forUser(UID)
+        url = self.uri.forUser(TESTUID)
         #actually get file
         response = requests.get(url, headers={'Accept':'text/xml'})
         response.raise_for_status()
