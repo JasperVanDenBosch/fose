@@ -7,7 +7,7 @@ import requests
 ### Test Data Section
 
 TESTDOI = '99.789/fosetest.1'
-TESTUID = 'a1B2c3D4'
+TESTUID = '52ae5a37745baf495f96f8e4'
 REVIEWCONTENT = 'FOSE Compliance Test Review'
 
 
